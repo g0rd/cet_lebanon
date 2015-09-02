@@ -27,8 +27,8 @@ with Browser("phantomjs") as browser:
         name = rows[0].find_by_tag("td")
        # details = project.find_by_tag("tr td")[1]
         print name.value
-        close = browser.find_by_css("#fancybox-bg-ne")
-        close.click()
+        overlay = browser.find_by_css("#fancybox-wrap")
+        overlay.mouse_out().click()
         #print details.get_text()
 
 # # Write out to the sqlite database using scraperwiki library
