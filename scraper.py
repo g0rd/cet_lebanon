@@ -10,7 +10,10 @@ html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 root = lxml.html.fromstring(html)
 root.cssselect("table")
 
-
+browser.visit("https://morph.io")
+browser.fill("q", "parliament")
+button = browser.find_by_css("button[type='submit']")
+button.click()
 # # Write out to the sqlite database using scraperwiki library
 
 scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
