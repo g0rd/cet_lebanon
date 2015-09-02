@@ -25,7 +25,7 @@ with Browser("phantomjs") as browser:
         project = browser.find_by_css("#project_box table")
         name = project.first.find_by_tag("tr td")
        # details = project.find_by_tag("tr td")[1]
-        print name.text
+        print name.value()
         #print details.get_text()
 
 # # Write out to the sqlite database using scraperwiki library
