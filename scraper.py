@@ -26,7 +26,7 @@ with Browser("phantomjs") as browser:
         rows = project.find_by_tag("tr")
         name = rows[0].find_by_tag("td")
        # details = project.find_by_tag("tr td")[1]
-        print name.value()
+        print name.value
         #print details.get_text()
 
 # # Write out to the sqlite database using scraperwiki library
