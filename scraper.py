@@ -23,7 +23,8 @@ with Browser("phantomjs") as browser:
     for tr in table.find_by_tag("tr"):
         tr.click()
         project = browser.find_by_css("#project_box table")
-        name = project.find_by_tag("tr td")[0]
+        rows = project.find_by_tag("tr")
+        name = rows[0].find_by_tag("td")
        # details = project.find_by_tag("tr td")[1]
         print name.value()
         #print details.get_text()
