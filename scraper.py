@@ -1,22 +1,34 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 
-import scraperwiki
-import lxml.html
+#import scraperwiki
+#import lxml.html
 # # Read in a page
-html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
+#html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
 # # Find something on the page using css selectors
-root = lxml.html.fromstring(html)
-root.cssselect("table")
+#root = lxml.html.fromstring(html)
+#root.cssselect("table")
+from splinter import Browser
 
-browser.visit("https://morph.io")
-browser.fill("q", "parliament")
-button = browser.find_by_css("button[type='submit']")
-button.click()
+with Browser("phantomjs") as browser:
+    # Optional, but make sure large enough that responsive pages don't
+    # hide elements on you...
+    browser.driver.set_window_size(1280, 1024)
+
+    # Open the page you want...
+    browser.visit("http://www.cetlebanon.com/projects/")
+
+    # submit the search form...
+    for tr in table
+      button = browser.find_by_css("table div table tr")
+      button.click()
+      project = browser.find_by_css("#project_box table")\
+      print link['tbody']
+
 # # Write out to the sqlite database using scraperwiki library
 
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+#scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
