@@ -21,10 +21,10 @@ with Browser("phantomjs") as browser:
     table =  browser.find_by_css("table div table")
     print(table)
     # submit the search form...
-    for tr in browser.find_by_tag("tr")
-      tr.click()
-      project = browser.find_by_css("#project_box table")
-      print link['tbody']
+    #for tr in browser.find_by_tag("tr")
+     # tr.click()
+      #project = browser.find_by_css("#project_box table")
+      #print link['tbody']
 
 # # Write out to the sqlite database using scraperwiki library
 
