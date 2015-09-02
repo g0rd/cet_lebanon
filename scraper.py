@@ -24,7 +24,7 @@ with Browser("phantomjs") as browser:
         tr.click()
         project = browser.find_by_css("#project_box table")
         name = project.first.find_by_tag("td tr")
-        details = project.second.find_by_tag("td tr")
+        details = project.find_by_tag("td tr")[1]
         print name.get_text()
         print details.get_text()
 
