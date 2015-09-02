@@ -28,7 +28,8 @@ with Browser("phantomjs") as browser:
        # details = project.find_by_tag("tr td")[1]
         print name.value
         overlay = browser.find_by_css("#fancybox-wrap")
-        overlay.mouse_out().click()
+        overlay.mouse_out()
+        browser.click()
         #print details.get_text()
 
 # # Write out to the sqlite database using scraperwiki library
