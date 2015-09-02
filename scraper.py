@@ -20,10 +20,9 @@ with Browser("phantomjs") as browser:
     browser.visit("http://www.cetlebanon.com/projects/")
 
     # submit the search form...
-    for tr in table
-      button = browser.find_by_css("table div table tr")
-      button.click()
-      project = browser.find_by_css("#project_box table")\
+    for tr in table browser.find_by_css("table div table")
+      tr.click()
+      project = browser.find_by_css("#project_box table")
       print link['tbody']
 
 # # Write out to the sqlite database using scraperwiki library
