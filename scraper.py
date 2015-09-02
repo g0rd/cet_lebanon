@@ -18,9 +18,9 @@ with Browser("phantomjs") as browser:
 
     # Open the page you want...
     browser.visit("http://www.cetlebanon.com/projects/")
-
+    table =  browser.find_by_css("table div table")
     # submit the search form...
-    for tr in table browser.find_by_css("table div table")
+    for tr in browser.find_all("tr")
       tr.click()
       project = browser.find_by_css("#project_box table")
       print link['tbody']
