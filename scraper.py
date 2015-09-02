@@ -23,7 +23,8 @@ with Browser("phantomjs") as browser:
     for tr in table.find_by_tag("tr"):
         tr.click()
         project = browser.find_by_css("#project_box table")
-        print project['tbody']
+        name = project.first.find_by_tag("td tr")
+        print (name)
 
 # # Write out to the sqlite database using scraperwiki library
 
