@@ -26,7 +26,7 @@ with Browser("phantomjs") as browser:
     #browser.visit("http://www.cetlebanon.com/projects/")
     table =  root.cssselect("table div table")
     # submit the search form...
-    for tr in table.cssselect("tr"):
+    for tr in table.xpath('//table/tr'):
         #companyName = tr.find_by_tag("td")[0]
         #print companyName.value.encode('utf-8')
         tr.click()
