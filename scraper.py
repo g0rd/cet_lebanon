@@ -26,13 +26,13 @@ with Browser("phantomjs") as browser:
     #browser.visit("http://www.cetlebanon.com/projects/")
     table =  root.cssselect("table div table")
     # submit the search form...
-    for tr in table.find_by_tag("tr"):
+    for tr in table.cssselect("tr"):
         #companyName = tr.find_by_tag("td")[0]
         #print companyName.value.encode('utf-8')
         tr.click()
-        project = browser.find_by_css("#project_box table")
-        rows = project.find_by_tag("tr")
-        name = rows[0].find_by_tag("td")
+        project = browser.cssselect("#project_box table")
+        rows = project.cssselect("tr")
+        name = rows[0].cssselect("td")
         print name.value
         element = WebDriverWait(browser.driver, 1).until(EC.visibility_of_element_located((By.ID, "fancybox-close")))
         element.click()
