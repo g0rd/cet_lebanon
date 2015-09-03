@@ -4,6 +4,7 @@
 import scraperwiki
 import lxml.html
 import time
+import httplib
 # # Read in a page
 #html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
