@@ -34,7 +34,7 @@ with Browser("phantomjs") as browser:
         overlay = browser.find_by_css("#fancybox-close")
         try:
             overlay.click()
-        except (httplib.BadStatusLine):
+        except (httplib.BadStatusLine, urllib2.URLError):
             error = True
         time.sleep(0.5)
                 
