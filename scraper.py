@@ -31,13 +31,9 @@ with Browser("phantomjs") as browser:
         rows = project.find_by_tag("tr")
         name = rows[0].find_by_tag("td")
         print name.value
-        overlay = browser.find_by_css("#fancybox-close")
-        try:
-            overlay.click()
-        except httplib.BadStatusLine:
-            pass
-        except urllib2.URLError:
-            pass
+        element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "fancybox-close")))
+        element.click()
+       # overlay = browser.find_by_css("#fancybox-close")
         time.sleep(0.5)
                 
         #print details.get_text()
