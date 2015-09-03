@@ -24,7 +24,7 @@ with Browser("phantomjs") as browser:
 
     # Open the page you want...
     #browser.visit("http://www.cetlebanon.com/projects/")
-    table =  root.find_by_css("table div table")
+    table =  root.cssselect("table div table")
     # submit the search form...
     for tr in table.find_by_tag("tr"):
         #companyName = tr.find_by_tag("td")[0]
