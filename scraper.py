@@ -32,7 +32,7 @@ with Browser("phantomjs") as browser:
         name = rows[0].find_by_tag("td")
         print name.value
         overlay = browser.find_by_id("fancybox-close")
-        overlay.style.display = "none"
+        overlay.click()
         time.sleep(0.5)
                 
         #print details.get_text()
