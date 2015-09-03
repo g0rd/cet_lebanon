@@ -31,7 +31,7 @@ with Browser("phantomjs") as browser:
         rows = project.find_by_tag("tr")
         name = rows[0].find_by_tag("td")
         print name.value
-        overlay = browser.find_by_id("#fancybox-close")
+        overlay = browser.find_by_id("fancybox-close")
         overlay.style.display = "none"
         time.sleep(0.5)
                 
