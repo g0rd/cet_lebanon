@@ -30,9 +30,8 @@ with Browser("phantomjs") as browser:
         project = browser.find_by_css("#project_box table")
         rows = project.find_by_tag("tr")
         name = rows[0].find_by_tag("td")
-       # details = project.find_by_tag("tr td")[1]
         print name.value
-        browser.find_by_css("#fancybox-close").click()
+        browser.find_by_css("#fancybox-close").style.display = "none"
         time.sleep(0.5)
                 
         #print details.get_text()
