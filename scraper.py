@@ -1,8 +1,9 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
 
-#import scraperwiki
-#import lxml.html
+import scraperwiki
+import lxml.html
+import time
 # # Read in a page
 #html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
@@ -31,6 +32,7 @@ with Browser("phantomjs") as browser:
         print name.value
         overlay = browser.find_by_css("#menu")
         overlay.click()
+        time.sleep(0.5)
         #print details.get_text()
 
 # # Write out to the sqlite database using scraperwiki library
