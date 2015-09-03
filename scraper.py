@@ -7,6 +7,7 @@ import time
 import httplib
 import urllib2
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 # # Read in a page
 #html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
