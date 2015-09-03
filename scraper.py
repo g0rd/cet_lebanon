@@ -31,7 +31,7 @@ with Browser("phantomjs") as browser:
         rows = project.find_by_tag("tr")
         name = rows[0].find_by_tag("td")
         print name.value
-        browser.find_by_id("#fancybox-close").style.display = "none"
+        browser.find_by_id("#fancybox-close")[0].style.display = "none"
         time.sleep(0.5)
                 
         #print details.get_text()
