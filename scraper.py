@@ -36,7 +36,7 @@ with Browser("phantomjs") as browser:
             overlay.click()
         except httplib.BadStatusLine:
             pass
-        except  urllib2.URLError):
+        except  urllib2.URLError:
             pass
         time.sleep(0.5)
                 
