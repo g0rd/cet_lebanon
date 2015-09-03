@@ -21,8 +21,8 @@ with Browser("phantomjs") as browser:
     table =  browser.find_by_css("table div table")
     # submit the search form...
     for tr in table.find_by_tag("tr"):
-        companyName = tr.find_by_tag("td")[0]
-        print companyName.value.encode('utf-8')
+        #companyName = tr.find_by_tag("td")[0]
+        #print companyName.value.encode('utf-8')
         tr.click()
         project = browser.find_by_css("#project_box table")
         rows = project.find_by_tag("tr")
