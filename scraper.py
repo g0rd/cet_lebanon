@@ -1,11 +1,12 @@
 # This is a template for a Python scraper on morph.io (https://morph.io)
 # including some code snippets below that you should find helpful
-
+from selenium import webdriver
 import scraperwiki
 import lxml.html
 import time
 import httplib
 import urllib2
+from selenium.webdriver.support.ui import WebDriverWait
 # # Read in a page
 #html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
