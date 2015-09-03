@@ -35,7 +35,7 @@ with Browser("phantomjs") as browser:
         try:
             overlay.click()
         except (httplib, urllib2):
-            time.sleep(0.01)
+            pass
         time.sleep(0.5)
                 
         #print details.get_text()
