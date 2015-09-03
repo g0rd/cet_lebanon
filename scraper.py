@@ -10,10 +10,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 # # Read in a page
-#html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
+html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
 
 # # Find something on the page using css selectors
-#root = lxml.html.fromstring(html)
+root = lxml.html.fromstring(html)
 #root.cssselect("table")
 from splinter import Browser
 
@@ -23,8 +23,8 @@ with Browser("phantomjs") as browser:
     browser.driver.set_window_size(1280, 1024)
 
     # Open the page you want...
-    browser.visit("http://www.cetlebanon.com/projects/")
-    table =  browser.find_by_css("table div table")
+    #browser.visit("http://www.cetlebanon.com/projects/")
+    table =  root.find_by_css("table div table")
     # submit the search form...
     for tr in table.find_by_tag("tr"):
         #companyName = tr.find_by_tag("td")[0]
