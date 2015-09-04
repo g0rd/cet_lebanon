@@ -8,4 +8,4 @@
 lxml==3.4.4
 cssselect==0.9.1
 splinter>=0.7.3
-scrapy==0.22
+scrapy==0.24
