@@ -1,49 +1,18 @@
-# This is a template for a Python scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
-from selenium import webdriver
-import scraperwiki
-import lxml.html
-import time
-import httplib
-import urllib2
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-# # Read in a page
-html = scraperwiki.scrape("http://www.cetlebanon.com/projects/")
+import scrapy
 
-# # Find something on the page using css selectors
-root = lxml.html.fromstring(html)
-#root.cssselect("table")
-from splinter import Browser
+class CetSpider(scrapy.Spider):
+    name = "cet"
+    allowed_domains = ["cetlebanon.com"]
+    start_urls = [
+        "http://www.cetlebanon.com/projects"
+    ]
 
-with Browser("phantomjs") as browser:
-    # Optional, but make sure large enough that responsive pages don't
-    # hide elements on you...
-    browser.driver.set_window_size(1280, 1024)
+    def parse(self, response):
+        filename = response.url.split("/")[-2]
+        with open(filename, 'wb') as f:
+            f.write(response.body)
 
-    # Open the page you want...
-    #browser.visit("http://www.cetlebanon.com/projects/")
-    #table =  root.cssselect("table div table")
-    # submit the search form...
-    for tr in root.xpath('//table/div/table/tr'):
-        print "1"
-        #companyName = tr.find_by_tag("td")[0]
-        #print companyName.value.encode('utf-8')
-        tr.click()
-        project = root.cssselect("#project_box table")
-        rows = project.cssselect("tr")
-        name = rows[0].cssselect("td")
-        print name.value
-        element = WebDriverWait(browser.driver, 1).until(EC.visibility_of_element_located((By.ID, "fancybox-close")))
-        element.click()
-       # overlay = browser.find_by_css("#fancybox-close")
-        time.sleep(0.5)
-                
-        #print details.get_text()
-
-# # Write out to the sqlite database using scraperwiki library
-
+scrapy crawl cet
 #scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
