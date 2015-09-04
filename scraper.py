@@ -12,7 +12,11 @@ class CetSpider(scrapy.Spider):
         with open(filename, 'wb') as f:
             f.write(response.body)
 
-scrapy crawl cet
+def main():
+    scrapy crawl cet
+if __name__ == '__main__':
+    main()
+
 #scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
 # # An arbitrary query against the database
