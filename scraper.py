@@ -1,4 +1,5 @@
 import scrapy
+import os
 
 class CetSpider(scrapy.Spider):
     name = "cet"
@@ -12,10 +13,8 @@ class CetSpider(scrapy.Spider):
         with open(filename, 'wb') as f:
             f.write(response.body)
 
-def main():
-    scrapy crawl cet
-if __name__ == '__main__':
-    main()
+os.system('scrapy crawl cet')
+
 
 #scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
